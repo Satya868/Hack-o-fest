@@ -31,6 +31,15 @@ app.get('/login', function(req, res){
     })
 })
 
+app.get('/analyze', function(req, res){
+    request('http://127.0.0.1:5000/analyze', function(error, response, body){
+        console.error('error:', error); 
+        console.log('statusCode:', response && response.statusCode); 
+        console.log('body:', body); 
+        res.send(body);
+    })
+})
+
 app.listen(PORT, function (){ 
     console.log('Listening on Port 3000');
 });
