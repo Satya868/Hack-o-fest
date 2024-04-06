@@ -1,4 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- <link href="./static/home.css"> -->
+    <link rel="stylesheet" href="{{url_for('static', filename = 'home.css')}}">
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Website</h1>
+    </header>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="#">Contact Us</a>
+    </nav>
+
+    <div class="container">
+        <div class="btn-container">
+            <button class="btn"><a href="/login">Login</a></button>
+            <button class="btn"><a href="/register">Sign In</a></button>
+        </div>
+    </div>
+    <div class="container">
+        hi
+    </div>
+</body>
+</html>
+
+
+<!-- <!doctype html>
 <html lang="en">
 
 <head>
@@ -28,10 +62,10 @@
                 <li class="nav-item active">
                     <a class="navbar-brand" href="/register">Register</a>
                 </li>
-                <!-- <li class="nav-item">
+                 <li class="nav-item">
                     <a class="nav-link" href="#">Features</a>
                 </li> -->
-                <li class="nav-item">
+                <!--<li class="nav-item">
                     <a class="navbar-brand" href="/login">Login</a>
                 </li>
                 <li class="nav-item active">
@@ -42,4 +76,4 @@
     </nav>
 </body>
 
-</html>
+</html> -->

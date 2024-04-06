@@ -1,0 +1,35 @@
+.bttn{
+    display: flex;
+    margin-left: 10%;
+    margin-top: 10px;
+    
+}
+/* .stop {
+    border-radius: 2%;
+    width: 100px;
+    height: 50px;
+    background-color: aqua;
+    text-align: center;
+    
+
+}
+.start{
+    width: 100px;
+    height: 50px;
+    background-color: aqua;
+    text-align: center;
+    border-radius: 2%;
+
+} */
+.btn .stop{
+    display: flex;
+    margin-left: 10%;
+
+}
+.back-to-dashboard button {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

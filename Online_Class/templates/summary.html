@@ -1,16 +1,18 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div class="container">
         <div class="cont">
             <h1>Original text</h1>
             <div class="txt-area">
-                
+                {{original_txt}}
             </div>
         </div>
         <div class="cont">
@@ -18,10 +20,64 @@
             <div class="text-area">
                 {{summary}}
             </div>
+            <a href="{{ url_for('download_pdf') }}" download="summary.pdf">Download Summary as PDF</a>
 
         </div>
     </div>
-    
-    
+
+
 </body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="cont">
+            <h1>Original text</h1>
+            <div class="txt-area">
+                {{ original_txt }}
+            </div>
+        </div>
+        <div class="cont">
+            <h1>Summarised text</h1>
+            <div class="text-area">
+                {{ summary }}
+            </div>
+            <button id="downloadBtn">Download Summary as PDF</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            fetch('{{ url_for("download_pdf") }}', {
+                method: 'POST', // Assuming your download_pdf route handles POST requests
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    rawtext: '{{ original_txt }}' // Pass the original text here if needed
+                })
+            }).then(response => response.blob())
+              .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'summary.pdf';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+              });
+        });
+    </script>
+</body>
+
 </html>

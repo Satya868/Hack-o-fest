@@ -20,7 +20,7 @@ text = "Virat Kohli (Hindi pronunciation:  is an Indian int, and stands as the f
 def summarizer(text):
 
         stopwords = list(STOP_WORDS)
-        print((stopwords))
+        # print((stopwords))
         nlp = spacy.load('en_core_web_sm')
         doc = nlp(text)
 
@@ -66,7 +66,7 @@ def summarizer(text):
         # print(line_of_summary)
 
         for i in range(len(summary)):
-                word_sz_of_summ+=(len(summary[i]))
+                word_sz_of_summ += (len(summary[i]))
                 
         # print(word_sz_of_summ, "count")
 
