@@ -5,26 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Summarizer Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="./static/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="./static/style.css"> -->
+    <link rel="stylesheet" href="{{url_for('static', filename = 'summ_input.css')}}">
+
+    <style>
+        
+    </style>
 </head>
 
 <body>
-    <div class="container" style="display: flex; justify-content: center; margin-bottom: 20px">
-        <h2>Here You can summarise Recorded Notes</h2>
+    <div class="nav">
+        <a href="/about">About Us &#x2197;</a>
+
     </div>
-
-    <div class="container" style="display: flex; justify-content: center; border-radius: 3%; border: rgb(69, 39, 39); ">
+    <div class="container">
+        <h2>Here You can summarise Recorded Notes</h2>
         <form action="/analyze" method="POST">
-            <textarea name = "rawtext" class="form-control" placeholder = 'Enter your text here' rows=12 style="width: 40rem;">
-
-            </textarea>
-
-            <button type="submit" class="btn btn-success" style="margin-top: 20px;">Submit</button>
+            <textarea name="rawtext" class="form-control" placeholder='Enter your text here' rows="8"></textarea>
+            <button type="submit" class="btn btn-success">Submit</button>
         </form>
     </div>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -32,7 +34,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
-
 </body>
 
 </html>

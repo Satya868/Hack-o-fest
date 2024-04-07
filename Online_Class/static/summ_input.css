@@ -1,0 +1,60 @@
+body {
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(41,158,161,1) 44%, rgba(21,2,6,1) 100%);
+    /* background: linear-gradient(135deg, #000 0%, #000 100%); */
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+    color: black;
+}
+
+textarea {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    resize: vertical;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+}
+
+.nav{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.nav a{
+    text-decoration: none;
+    color: rgb(243, 240, 240);
+    font-size: larger;
+}
+
+.nav a:hover{
+    text-decoration: underline;
+    color: rgb(249, 151, 151);
+    font-weight: bold;
+}

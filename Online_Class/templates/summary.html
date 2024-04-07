@@ -37,9 +37,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'summary.css')}}">
+
 </head>
 
 <body>
+    <div class="nav">
+        <div class="meeting">
+            <!-- <a href="{{url_for('meeting')}}">Meeting</a> -->
+            <a href="/meeting">Meeting</a>
+        </div>
+        <div class="about">
+            <a href="/about">About Us</a>
+        </div>
+    </div>
     <div class="container">
         <div class="cont">
             <h1>Original text</h1>
