@@ -13,6 +13,23 @@
     <style>
         
     </style>
+    <style>
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            /* position: fixed; */
+            margin-bottom: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .fa {
+            margin: 0 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,7 +43,33 @@
             <textarea name="rawtext" class="form-control" placeholder='Enter your text here' rows="8"></textarea>
             <button type="submit" class="btn btn-success">Submit</button>
         </form>
+        
     </div>
+    <div style="height: 17vh;">
+
+    </div>
+    <footer>
+        <p>&copy; <span id="currentYear"></span> el_wey. All rights reserved. <i class="fa fa-clock-o"></i> <span id="currentTime"></span></p>
+    </footer>
+
+    
+    
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            document.getElementById('currentTime').textContent = hours + ':' + minutes + ':' + seconds;
+        }
+    
+        updateTime(); 
+        setInterval(updateTime, 1000);
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

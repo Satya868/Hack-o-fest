@@ -1,15 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <link rel="stylesheet" href="{{url_for('static', filename = 'home.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename = 'about.css')}}">
+    <title>About Us</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'home.css')}}">
 
+    <style>
+        body {
+            
+            background: rgb(63,94,251);
+            background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(161,41,84,1) 44%, rgba(21,2,6,1) 100%);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .member {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .member:last-child {
+            border-bottom: none;
+        }
+
+        .member img {
+            border-radius: 50%;
+            margin-bottom: 10px;
+            display: block;
+            margin: auto;
+        }
+
+        .member h2 {
+            text-align: center;
+        }
+
+        .member p {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .member .links {
+            text-align: center;
+        }
+
+        .member .links a {
+            margin: 0 5px;
+        }
+
+        .member .links a img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .member .links a img:hover {
+            transform: scale(1.2);
+        }
+    </style>
+    <style>
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            /* position: fixed; */
+            bottom: 0;
+            width: 100%;
+        }
+
+        .fa {
+            margin: 0 5px;
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <h1>Welcome! Let's have brief intro about Us</h1>
@@ -17,22 +103,47 @@
     <nav>
         <a href="/">Home</a>
         <a href="/about">About Us</a>
-        <a href="#">Contact Us</a>
+        <a href="/contact">Contact Us</a>
     </nav>
-    <div class="cont">
-        <div class="content">
-            <ul>
-                <li><span style="font-size: larger; font-weight: bolder; ">Member 1 : Satya Prakash</span>
-                    <a href="https://www.linkedin.com/in/satya-prakash-755145223" target="_blank"><i class="fa fa-linkedin-square" style="font-size:24px; margin-left: 20px; color: rgb(250, 83, 12); cursor: pointer;"></i></a>     
-                </li>
-                <li><span style="font-size: larger; font-weight: bolder; ">Member 2 : Saurabh Prabhat</span>
-                    
-                    <a href="https://www.linkedin.com/in/saurabh-prabhat" target="_blank"><i class="fa fa-linkedin-square" style="font-size:24px;margin-left: 20px; color: rgb(250, 83, 12); cursor: pointer;"></i></a>
-                </li>
-            </ul>
+    <div class="container">
+        <h1>About Us</h1>
+        <div class="member">
+            <img src="{{url_for('static', filename = 'satya.jpg')}}" alt="Member 1" style="width: 110px; height: 120px;">
+            <h2>Satya Prakash</h2>
+            <p>Email: satya8680pr@gmail.com</p>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/satya-prakash-755145223/" target="_blank"><i class="fa fa-linkedin-square" style="font-size:48px; margin-left: 20px; color: rgb(0, 0, 255); cursor: pointer;"></i></a>
+            </div>
         </div>
-
+        <div class="member">
+            <img src="{{url_for('static', filename = 'saurabh.jpg')}}" alt="Member 1" style="width: 100px; height: 100px;">
+            <h2>Saurabh Prabhat</h2>
+            <p>Email: 1sp7stonic@gmail.com</p>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/saurabh-prabhat" target="_blank"><i class="fa fa-linkedin-square" style="font-size:48px; margin-left: 20px; color: rgb(0, 0, 255); cursor: pointer;"></i></a>
+            </div>
+        </div>
     </div>
-    
+    <footer>
+        <p>&copy; <span id="currentYear"></span> el_wey. All rights reserved. <i class="fa fa-clock-o"></i> <span id="currentTime"></span></p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            document.getElementById('currentTime').textContent = hours + ':' + minutes + ':' + seconds;
+        }
+
+        updateTime(); 
+        setInterval(updateTime, 1000);
+    </script>
 </body>
+
 </html>

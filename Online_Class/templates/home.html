@@ -16,7 +16,7 @@
     <nav>
         <a href="/">Home</a>
         <a href="/about">About Us</a>
-        <a href="#">Contact Us</a>
+        <a href="/contact">Contact Us</a>
     </nav>
 
     <div class="container">
@@ -28,5 +28,26 @@
     <div class="count">
         hi
     </div>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> El Wey. All rights reserved. <i class="fa fa-clock-o"></i> <span id="currentTime"></span></p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            document.getElementById('currentTime').textContent = hours + ':' + minutes + ':' + seconds;
+        }
+
+        updateTime(); 
+        setInterval(updateTime, 1000);
+    </script>
 </body>
 </html>
