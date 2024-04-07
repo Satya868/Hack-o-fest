@@ -67,6 +67,8 @@ class LoginForm(FlaskForm):
 def home():
     # return redirect(url_for("login"))
     return render_template("home.html")
+
+
 @app.route("/about")
 def about():
     return render_template("about.html")
@@ -146,7 +148,6 @@ def analyze():
     return render_template('summary.html',  summary = summary, original_txt = org_txt, total_line_in_summary = line_of_summary)
 
 
-# from flask import request
 
 @app.route("/download_pdf", methods=['GET', 'POST'])
 @login_required

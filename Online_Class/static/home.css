@@ -62,3 +62,12 @@ nav a:hover {
 .btn:hover {
     background-color: #312e2e;
 }
+
+.count{
+    background-image: url('images.png');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    height: 100vh;
+
+}
