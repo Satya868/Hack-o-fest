@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,104 @@
     <!-- <link href="./static/home.css"> -->
     <link rel="stylesheet" href="{{url_for('static', filename = 'home.css')}}">
     </style>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
+    <style>
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            /* position: fixed; */
+            bottom: 0;
+            width: 100%;
+        }
+
+        .fa {
+            margin: 0 5px;
+        }
+    </style>
+    <style>
+        .count{
+            background: rgb(118,123,147);
+background: linear-gradient(90deg, rgba(118,123,147,1) 0%, rgba(41,161,117,1) 44%, rgba(192,223,188,1) 100%);
+        }
+        .elem {
+            display: flex;
+            /* flex-direction: column; */
+            gap: 20px;
+            /* Adjust the gap between items as needed */
+        }
+
+        .e1 {
+            background-color: #f0f0f0;
+            /* Background color for each item */
+            height: 100px;
+            /* Set the height of each item as needed */
+            border-radius: 5px;
+            /* Optional: Add rounded corners */
+            /* Additional styles such as padding, margin, etc. can be added here */
+        }
+    </style>
+
+    <style>
+        @keyframes moveText {
+            0% {
+                transform: translateX(-10px) scale(1);
+            }
+
+            50% {
+                transform: translateX(10px) scale(1.1);
+            }
+
+            100% {
+                transform: translateX(-10px) scale(1);
+            }
+        }
+
+        .animated-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            animation: moveText 5s ease-in-out infinite;
+            /* Adjust animation duration as needed */
+        }
+    </style>
+
+    <style>
+        .features {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.feature {
+    display: inline-block;
+    width: 30%;
+    padding: 20px;
+    margin: 10px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+.feature i {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.feature i:hover{
+    box-shadow: #333;
+}
+
+.about {
+    text-align: center;
+}
+    </style>
 </head>
+
 <body>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
     <header>
         <h1>Welcome to Smart ClassRoom</h1>
     </header>
@@ -25,12 +122,56 @@
             <button class="btn"><a href="/register">Sign In</a></button>
         </div>
     </div>
+
     <div class="count">
-        hi
+        <div class="animated-text" style=" display:flex;justify-content:  center;color: Red; align-items: center;">
+            <h1>SMART CLASS ASSISTED BY AI</h1>
+        </div>
+
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <h2>
+                <p>Empowering education through artificial intelligence</p>
+            </h2>
+        </div>
+
+        <section class="features">
+            <h2>Key Features</h2>
+            <div class="feature">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>Interactive Learning</h3>
+                <p>Engage with interactive lessons and quizzes tailored to your learning pace.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-robot"></i>
+                <h3>AI Assistance</h3>
+                <p>Get personalized recommendations and assistance from AI tutors.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Virtual Classroom</h3>
+                <p>Join virtual classrooms with live streaming lectures and discussions.</p>
+            </div>
+        </section>
+        <!-- <div class="elem">
+            <div class="e1">
+                <span>
+                    <img href = "{{url_for('static', filename = 'i1.jpg')}}">
+                    <h3>
+                        
+                    </h3>
+                </span>
+            </div>
+            <div class="e1"></div>
+            <div class="e1"></div>
+        </div> -->
     </div>
 
+    
+
+
     <footer>
-        <p>&copy; <span id="currentYear"></span> El Wey. All rights reserved. <i class="fa fa-clock-o"></i> <span id="currentTime"></span></p>
+        <p>&copy; <span id="currentYear"></span> El Wey. All rights reserved. <i class="fa fa-clock-o"></i> <span
+                id="currentTime"></span></p>
     </footer>
 
     <script>
@@ -46,8 +187,9 @@
             document.getElementById('currentTime').textContent = hours + ':' + minutes + ':' + seconds;
         }
 
-        updateTime(); 
+        updateTime();
         setInterval(updateTime, 1000);
     </script>
 </body>
+
 </html>
